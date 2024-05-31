@@ -9,7 +9,7 @@ def main(request):
         'books': books,
     })
 
-def book_list(request):
+def author_list(request):
     authors = Author.objects.annotate(book_count=Count('book'))
     return render(request, 'author_list.html', {
         'authors': authors
